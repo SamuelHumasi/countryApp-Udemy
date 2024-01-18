@@ -1,0 +1,29 @@
+<div class="border-right p-2" id="shared-sidebar">
+  <h3>Countries</h3>
+  <hr />
+  <div class="list-group list-reset">
+    <button
+      class="list-group-item list-group-item-action"
+      [routerLink]="['']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact:true}"
+
+    >
+      Home Page
+    </button>
+    <button
+      class="list-group-item list-group-item-action"
+      [routerLink]="['/about']"
+      routerLinkActive="active"
+    >
+      About Page
+    </button>
+    <button
+      class="list-group-item list-group-item-action"
+      [routerLink]="['/contact']"
+      routerLinkActive="active"
+    >
+      Contact Page
+    </button>
+  </div>
+</div>
