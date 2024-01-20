@@ -12,6 +12,8 @@ class="alert alert-warning text-center">
                 <th scope="col">Name</th>
                 <th scope="col">Capital</th>
                 <th scope="col">Population</th>
+                <th scope="col">Links</th>
+
             </tr>
         </thead>
         <tbody *ngFor="let country of countriesList index as i">
@@ -21,6 +23,7 @@ class="alert alert-warning text-center">
                 <td>{{country.name.common}}</td>
                 <td>{{country.capital}}</td>
                 <td>{{country.population | number}}</td>
+                <td><a [routerLink]="['/countries/by/', country.cca3]">Show More</a></td>
             </tr>
         </tbody>
     </table>
