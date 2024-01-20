@@ -1,0 +1,27 @@
+<div *ngIf="countriesList.length===0 else tableFlag"
+class="alert alert-warning text-center">
+    <h3>No Content</h3>
+</div>
+
+<ng-template #tableFlag >
+    <table class="table" >
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Flag</th>
+                <th scope="col">Name</th>
+                <th scope="col">Capital</th>
+                <th scope="col">Population</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let country of countriesList index as i">
+            <tr>
+                <th scope="row">{{i+1}}</th>
+                <td>{{country.flag}}</td>
+                <td>{{country.name.common}}</td>
+                <td>{{country.capital}}</td>
+                <td>{{country.population | number}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>

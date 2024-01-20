@@ -1,0 +1,11 @@
+<h2>By Country</h2>
+<hr>
+<div>
+    <shared-search-box
+    placeHolder='Search by Contry'
+    (searchValue)="searchByCountry($event)"></shared-search-box>
+</div>
+
+<div>
+    <countries-table [countriesList]="countriesList"></countries-table>
+</div>
