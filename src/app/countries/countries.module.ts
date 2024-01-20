@@ -7,6 +7,7 @@ import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.com
 import { CountriesRoutingModule } from './countries-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ContryTableComponent } from './components/contry-table/contry-table.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -23,6 +24,7 @@ import { ContryTableComponent } from './components/contry-table/contry-table.com
     CommonModule,
     CountriesRoutingModule,
     SharedModule,
+    RouterModule
   ]
 })
 export class CountriesModule { }

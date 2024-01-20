@@ -10,7 +10,7 @@ export const routes: Routes = [
     {path:'by-capital', component:ByCapitalPageComponent},
     {path:'by-region', component:ByRegionPageComponent},
     {path:'by-country', component:ByCountryPageComponent},
-    {path:'by/:Id',  component:CountryPageComponent },
+    {path:'by/:id',  component:CountryPageComponent },
     {path:'**', redirectTo:'by-capital'}
 ]
 

@@ -1,1 +1,42 @@
-<p>by-page works!</p>
+<ng-template #loading>
+    <div>
+        <p class="alert alert-success text-center">Waiting...</p>
+    </div>
+</ng-template>
+
+<div *ngIf="country else loading">
+    <h2>Pais: {{ country.name.common }}</h2>
+    <hr />
+    <div class="flex col">
+        <div class="d-flex">
+          <div class="p-2">
+            <h3>Flag</h3>
+            <div>
+              <img
+                [src]="country.flags.svg"
+                [alt]="country.name.common"
+                style="width: 140px"
+              />
+            </div>
+          </div>
+          <div class="flex-grow-1 p-2">
+            <h3>Information</h3>
+            <div>
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Population: </strong>{{country.population | number}}</li>
+                <li class="list-group-item"><strong>Code: </strong>{{country.cca3}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="p-2">
+            <h3>Translate Names</h3>
+            <!-- TODO: arreglar este ngFor *ngFor="let translation of countryTranslations"-->
+            <div class="d-flex flex-wrap">
+                <div *ngFor="let translation of countryTranslations">
+                    <span class="badge text-bg-primary mx-1">{{translation}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
