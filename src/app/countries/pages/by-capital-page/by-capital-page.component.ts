@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CountriesService } from '../../services/countries.service';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'app-by-capital-page',
@@ -8,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ByCapitalPageComponent implements OnInit {
 
-  constructor() { }
+  public countriesList:Country[]=[]
+  private countryParam:string = 'capital'
+
+  constructor(
+    private _countriesServices:CountriesService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  searchByCapital(value:string){
+    this._countriesServices.getCountriesData(value, this.countryParam).subscribe((res)=>{
+      this.countriesList = res
+    })
   }
 
 }
