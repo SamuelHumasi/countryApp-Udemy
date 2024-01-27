@@ -1,11 +1,23 @@
 <h2>By Region</h2>
-<hr>
-<div>
-    <shared-search-box
+<hr />
+<div class="text-center">
+  <!-- <shared-search-box
     placeHolder='Search by Region'
-    (searchValue)="searchByRegion($event)"></shared-search-box>
+    (searchValue)="searchByRegion($event)"></shared-search-box> -->
+
+  <button
+    *ngFor="let region of regions"
+    class="btn m-2"
+    [ngClass]="{
+      'border-0 border-3 border-bottom border-info rounded-0':
+        selectedRegion === region
+    }"
+    (click)="searchByRegion(region)"
+  >
+    {{ region }}
+  </button>
 </div>
 
 <div>
-    <countries-table [countriesList]="countriesList"></countries-table>
+  <countries-table [countriesList]="countriesList"></countries-table>
 </div>
