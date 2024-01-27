@@ -12,6 +12,7 @@ export class ByCapitalPageComponent implements OnInit {
 
   public countriesList:Country[]=[]
   private countryParam:string = 'capital'
+  public isLoad:boolean = false
 
   constructor(
     private _countriesServices:CountriesService
@@ -21,8 +22,10 @@ export class ByCapitalPageComponent implements OnInit {
   }
 
   searchByCapital(value:string){
+    this.isLoad=true
     this._countriesServices.getCountriesData(value, this.countryParam).subscribe((res)=>{
       this.countriesList = res
+      this.isLoad=false
     })
   }
 
