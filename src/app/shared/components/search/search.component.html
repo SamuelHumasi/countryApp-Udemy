@@ -4,5 +4,7 @@
     class="form-control"
     (keyup.enter)="emitValue(txtValue.value)"
     (keyup)="onKeyPress(txtValue.value)"
+    [value]="lastValue"
     #txtValue />
+    
 </div>

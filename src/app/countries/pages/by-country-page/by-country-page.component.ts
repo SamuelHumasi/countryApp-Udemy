@@ -11,11 +11,16 @@ import { CountriesService } from '../../services/countries.service';
 export class ByCountryPageComponent implements OnInit {
 
   public countriesList:Country[]=[]
+  public lastSearchValue?:string = ''
+  
   private countryParam:string = 'name'
 
   constructor(private _countriesServices:CountriesService) { }
 
   ngOnInit(): void {
+    this.countriesList = this._countriesServices.cacheStore.byCountry.countries
+    this.lastSearchValue = this._countriesServices.cacheStore.byCountry.term
+
   }
 
   searchByCountry(value:string){

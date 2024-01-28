@@ -5,6 +5,7 @@
     <shared-search-box
     placeHolder='Search by Capital'
     (searchKeyPress)="searchByCapital($event)"
+    [lastValue]="lastSearchValue"
     ></shared-search-box>
 </div>
 
