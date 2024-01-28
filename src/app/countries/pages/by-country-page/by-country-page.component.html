@@ -3,7 +3,9 @@
 <div>
     <shared-search-box
     placeHolder='Search by Contry'
-    (searchValue)="searchByCountry($event)"></shared-search-box>
+    (searchKeyPress)="searchByCountry($event)"
+    [lastValue]="lastSearchValue"
+    ></shared-search-box>
 </div>
 
 <div>
